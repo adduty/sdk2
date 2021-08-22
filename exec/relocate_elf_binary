@@ -4,6 +4,11 @@
 # relative to a given base directory. Requires the patchelf utility
 # to be somewhere in the PATH
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 FILE=$1
 BASE=$2
 

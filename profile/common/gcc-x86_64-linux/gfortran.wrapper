@@ -2,6 +2,11 @@
 #
 # Wrapper for gfortran (x86_64 linux)
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 # Examine arguments to decide whether we're actually compiling
 
 COMPILING="n"

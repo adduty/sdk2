@@ -2,6 +2,11 @@
 #
 # Script to sign a file
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 FILE=$1
 ENTITLE_FILE=$2
 

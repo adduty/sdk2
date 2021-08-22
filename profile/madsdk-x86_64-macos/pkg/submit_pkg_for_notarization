@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 # Check SDK2_RELEASE is set
 
 if [[ -z $SDK2_RELEASE ]]; then

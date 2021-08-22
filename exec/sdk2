@@ -2,6 +2,11 @@
 #
 # Front-end script for SDK2
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 ### COMMAND-LINE ARGUMENTS ###
 
 # Store and validate arguments

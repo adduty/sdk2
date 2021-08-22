@@ -2,6 +2,11 @@
 #
 # Add an icon to a directory on OSX
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 ICON=$1
 DIR=$2
 

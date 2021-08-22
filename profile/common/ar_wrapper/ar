@@ -2,6 +2,11 @@
 #
 # Wrapper for ar
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 # Run ar, stripping out any warnings about empty symbols
 
 /usr/bin/ar "$@" 2>&1 | grep -v 'has no symbols$'

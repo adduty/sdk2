@@ -3,6 +3,11 @@
 # Script to relocate an OSX Mach-O binary so that all internal paths
 # are relative to a given base directory
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 FILE=$1
 BASE=$2
 

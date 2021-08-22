@@ -2,6 +2,11 @@
 #
 # Create a shared library from a static one
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 # Process arguments
 
 compiler="gcc"

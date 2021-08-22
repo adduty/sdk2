@@ -2,6 +2,11 @@
 #
 # Script to create a tar archive from an SDK installation
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 DEST_ROOT=$1
 TAR_FILE=$2
 

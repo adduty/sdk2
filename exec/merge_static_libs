@@ -2,6 +2,11 @@
 #
 # Merge multiple static libraries
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 OUTPUT_LIB=$1
 INPUT_LIBS=${@:2}
 

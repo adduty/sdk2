@@ -6,6 +6,11 @@
 #
 # Rich Townsend <rhtownsend@me.com>
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 # Look for the 'real' md5sum by iterating through which -a output
 # and picking the entry after the current script
 

@@ -2,6 +2,11 @@
 #
 # Script to create an OSX disk image (dmg) from an SDK installation
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 DEST_ROOT=$1
 DMG_TEMPLATE=$2
 DMG_FILE=$3

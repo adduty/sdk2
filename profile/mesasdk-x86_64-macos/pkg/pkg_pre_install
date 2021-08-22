@@ -2,6 +2,11 @@
 #
 # Pre-installation script for MESA SDK
 
+set -o errexit
+set -o pipefail
+set -o nounset
+#set -o xtrace
+
 export MESASDK_ROOT=/Applications/mesasdk
 
 # Clean up any existing installation
