@@ -293,7 +293,7 @@ packages_install () {
 		exit 1
 	    fi
 
-        ${BUILD_DIR:-$SRC_DIR}
+        ${BUILD_DIR:=$SRC_DIR}
 
 	    # Set full path variables
 
