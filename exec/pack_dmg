@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Script to create an OSX disk image (dmg) from an SDK installation
 

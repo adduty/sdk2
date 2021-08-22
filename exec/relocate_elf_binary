@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Script to relocate an ELF binary so that all internal paths are
 # relative to a given base directory. Requires the patchelf utility

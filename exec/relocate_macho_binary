@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Script to relocate an OSX Mach-O binary so that all internal paths
 # are relative to a given base directory
