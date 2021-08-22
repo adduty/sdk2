@@ -152,8 +152,8 @@ fi
 
 ### ENVIRONMENT ###
 
-# On Linux systems, add DEST_ROOT/bin to LD_RUN_PATH. This 
-# ensures libraries are found by executables run during 
+# On Linux systems, add DEST_ROOT/bin to LD_RUN_PATH. This
+# ensures libraries are found by executables run during
 # the build process
 
 if [[ $SDK2_PLATFORM_NAME = 'Linux' ]]; then
@@ -209,7 +209,7 @@ pre_install() {
 	# Import the pre-install commands
 
 	. ${PD}/pre_install
-	    
+
 	if [ $? -ne 0 ]; then
 	    echo "FAILED when including pre-install commands"
 	    exit 1
@@ -238,7 +238,7 @@ post_install () {
 	# Import the post-install definition
 
 	. ${PD}/post_install
-	    
+
 	if [ $? -ne 0 ]; then
 	    echo "FAILED when including post-install commands"
 	    exit 1
@@ -280,7 +280,7 @@ packages_install () {
 	    # install() -- install (optional)
 
 	    . ${SDK2_PACKAGE_ROOT}/${PACKAGE}
-	    
+
 	    if [ $? -ne 0 ]; then
 		echo "FAILED when including definition for package $PACKAGE"
 		exit 1
@@ -367,7 +367,7 @@ packages_install () {
 clean () {
 
     # Clean src and build directories
-    
+
     rm -rf ${SDK2_SRC_ROOT}/*
     rm -rf ${SDK2_BUILD_ROOT}/*
 
@@ -389,7 +389,7 @@ fetch () {
 	    echo "  $(basename $fetch_file)"
 
 	    curl $url -s -o $fetch_file
-	    
+
 	    if [ $? -ne 0 ]; then
 		echo "FAILED in fetch for package $PACKAGE (file $fetch_file, url $url)"
 		exit 1
@@ -494,4 +494,3 @@ case $ACTION in
 	echo "Syntax: sdk2 pre_install|packages_install|post_install|install <package_list>"
 	exit 1
 esac
-
