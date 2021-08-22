@@ -72,11 +72,11 @@ export SDK2_BUILD_ROOT=${SDK2_TMP}/build
 
 # Define platform variables
 
-export SDK2_PLATFORM_NAME=`uname -s`
-export SDK2_PLATFORM_ISA=`uname -m`
+export SDK2_PLATFORM_NAME=$(uname -s)
+export SDK2_PLATFORM_ISA=$(uname -m)
 
 if [[ $SDK2_PLATFORM_NAME = 'Linux' ]]; then
-    if `uname -a | grep -q Ubuntu`; then
+    if $(uname -a | grep -q Ubuntu); then
 	export SDK2_PLATFORM_DISTRO='Ubuntu'
     else
 	export SDK2_PLATFORM_DISTRO='Generic'
@@ -146,7 +146,7 @@ if [[ -z $PACKAGES ]]; then
 	exit 1
     fi
 
-    PACKAGES=(`awk '!/^ *#/ && NF' ${profile_dir}/packages`)
+    PACKAGES=($(awk '!/^ *#/ && NF' ${profile_dir}/packages))
 
 fi
 
@@ -384,9 +384,9 @@ fetch () {
 
 	if [[ ! -f $fetch_file ]]; then
 
-	    url=$PROFILE_URL/`basename $fetch_file`
+	    url=$PROFILE_URL/$(basename $fetch_file)
 
-	    echo "  `basename $fetch_file`"
+	    echo "  $(basename $fetch_file)"
 
 	    curl $url -s -o $fetch_file
 	    
