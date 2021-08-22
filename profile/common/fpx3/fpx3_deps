@@ -27,8 +27,8 @@ if (exists $ENV{'@SDK_MATH_SLOT@'}) {
 else {
     $EXCLUDE_PATHS .= ":$ENV{'@SDK_ROOT@'}/math-slots/default/include";
 }
-    
-# Split the command-line arguments into program 
+
+# Split the command-line arguments into program
 # units and fpx3 arguments
 
 @units = grep !/^-/, @ARGV;
@@ -61,7 +61,7 @@ foreach my $unit (@units) {
     # Run the file through fpx3, piping the output
     # into a buffer
 
-    open FPX3, "$FPX3_EXEC -nofo ".join(' ', @args)." < $pathname|" 
+    open FPX3, "$FPX3_EXEC -nofo ".join(' ', @args)." < $pathname|"
 	or die "Unable to open pipe to $FPX3_EXEC\n$!";
     my $buffer = join('', <FPX3>);
     close FPX3;
@@ -82,7 +82,7 @@ foreach my $unit (@units) {
 	    }
 
 	    # Remove dependencies found in EXCLUDE_PATHS
-	    
+
 	    foreach $path (split(':', $EXCLUDE_PATHS)) {
 		@deps = grep ! -f "$path/$_.mod", @deps;
 	    }
@@ -130,7 +130,7 @@ sub flatten_deps {
     # Find *all* units that $unit depends upon (including
     # itself)
 
-    $pathname = path_search("$unit.$FPP_SUFFIX", $path) || 
+    $pathname = path_search("$unit.$FPP_SUFFIX", $path) ||
 	path_search("$unit.$F90_SUFFIX", $path);
 
     if($pathname) {

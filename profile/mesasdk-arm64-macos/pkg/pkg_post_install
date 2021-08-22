@@ -48,7 +48,7 @@ case $major in
 	;;
 
     *)
-	
+
 	echo "Invalid OS major version number: $major"
 	exit 1
 	;;

@@ -23,7 +23,7 @@ if($os eq 'Linux') {
     if($arch eq 'x86_64') {
 	$supported = 'Y';
     }
-    
+
     if($verstr =~ /Microsoft/){
 	$supported = 'N';
     }

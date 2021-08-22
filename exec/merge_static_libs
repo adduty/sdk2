@@ -50,7 +50,7 @@ for input_lib in ${INPUT_LIBS[@]}; do
     # Add objects to the output library while removing them from the input library copy
 
     pushd $WD > /dev/null
-    
+
     for obj_file in ${obj_files[@]}; do
 
 	# Extract the item from the input library copy

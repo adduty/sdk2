@@ -43,7 +43,7 @@ if [ -f $FILE ]; then
 	    deps=`otool -L $FILE | awk -v pattern="^$BASE/?" 'NR > 1 && $1 ~ pattern { print $1 }'`
 
 	    # Fix rpaths for the dependencies
-	    
+
 	    for dep in $deps; do
 		DN=`basename $dep`
 		DD=`dirname $dep`
@@ -55,9 +55,9 @@ if [ -f $FILE ]; then
 	    if `file $FILE | grep -q 'executable'`; then
 		install_name_tool -add_rpath @loader_path/`relpath $BASE $FD` $FILE
 	    fi
-	    
+
 	    # If the file is a library, set id
-	
+
 	    if `file $FILE | grep -q 'shared library'`; then
 		install_name_tool -id @rpath/`relpath $FD $BASE`/$FN $FILE
 	    fi
@@ -65,5 +65,5 @@ if [ -f $FILE ]; then
 	fi
 
     fi
-    
+
 fi

@@ -57,7 +57,7 @@ build () {
 	EXTRA_CONFIG_OPTS="$EXTRA_CONFIG_OPTS --with-sysroot=/ --with-build-sysroot=${SDK2_BUILD_ROOT}/xcode"
     elif [[ $SDK2_PLATFORM_NAME = 'Linux' ]]; then
 	EXTRA_CONFIG_OPTS="$EXTRA_CONFIG_OPTS --enable-clocale=generic"
-    fi	
+    fi
 
     # Configure
 

@@ -52,7 +52,7 @@ build () {
 
     make clean
     make single_double_complex_dcomplex
-    
+
     if [ $? -ne 0 ]; then
 	echo "FAILED in make for $PACKAGE_NAME"
 	exit 1

@@ -39,7 +39,7 @@ if [ -f $FILE ]; then
 	    FD=`dirname $FILE`
 
 	    # Fix the rpath
-	    
+
 	    rpath_old=`patchelf --print-rpath $FILE | sed -e "s|\\$ORIGIN|$FD|g"`
             rpath_new=`relpath $rpath_old $FD | sed -e "s|^|\\$ORIGIN/|" -e "s|:|:\\$ORIGIN/|g"`
 
@@ -48,5 +48,5 @@ if [ -f $FILE ]; then
 	fi
 
     fi
-    
+
 fi

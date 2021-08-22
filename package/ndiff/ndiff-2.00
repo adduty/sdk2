@@ -40,7 +40,7 @@ build () {
     # Build
 
     make -j$NCORES
-    
+
     if [ $? -ne 0 ]; then
 	echo "FAILED in make for $PACKAGE_NAME"
 	exit 1

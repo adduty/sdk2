@@ -28,7 +28,7 @@ build () {
     EXTRA_CONFIG_OPTS=
 
     if [[ $SDK2_PLATFORM_NAME = 'Darwin' ]]; then
-	
+
 	# This is to work around the fact that various OSX components
 	# cause GCC to barf...
 
@@ -42,7 +42,7 @@ build () {
 	fi
 
     fi
-    
+
     # Configure
 
     ./configure \
@@ -63,7 +63,7 @@ build () {
     # Build
 
     make -j$NCORES
-    
+
     if [ $? -ne 0 ]; then
 	echo "FAILED in make for $PACKAGE_NAME"
 	exit 1
@@ -86,5 +86,5 @@ install () {
     sed -e s/@SDK_ROOT@/\${${PROFILE_PREFIX}_ROOT}/g \
 	${SDK2_PROFILE_ROOT}/common/ffmpeg/images_to_movie > ${DEST_ROOT}/bin/images_to_movie
     chmod a+x ${DEST_ROOT}/bin/images_to_movie
- 
+
 }

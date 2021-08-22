@@ -23,7 +23,7 @@ if($os eq 'Linux') {
     if($arch eq 'aarch64') {
 	$supported = 'Y';
     }
-    
+
 }
 
 # Output the result

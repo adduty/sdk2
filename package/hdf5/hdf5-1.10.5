@@ -25,7 +25,7 @@ build () {
     CC=gcc FC=gfortran CFLAGS=-std=gnu99 ./configure \
       --build=$BUILD_SPEC \
       --prefix=$DEST_ROOT --enable-fortran --enable-fortran2003 \
-      --enable-using-memchecker    
+      --enable-using-memchecker
 
     if [ $? -ne 0 ]; then
 	echo "FAILED in configure for $PACKAGE_NAME"
@@ -35,7 +35,7 @@ build () {
     # Build
 
     make -j$NCORES
-    
+
     if [ $? -ne 0 ]; then
 	echo "FAILED in make for $PACKAGE_NAME"
 	exit 1
@@ -65,7 +65,7 @@ install () {
 	if [[ -e $file ]]; then
 	    sed -i.bak -e "s|$DEST_ROOT|\${${PROFILE_PREFIX}_ROOT}|g" -i '' $file && rm -f ${file}.bak
 	fi
-    done    
+    done
 
     # Create the link script
 

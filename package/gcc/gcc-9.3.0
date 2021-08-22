@@ -54,7 +54,7 @@ build () {
     if [[ $SDK2_PLATFORM_NAME = 'Darwin' ]]; then
 	ln -sf ${SDK2_BUILD_ROOT}/xcode ${DEST_ROOT}/sysroot
     fi
-	
+
     # Set extra configuration options
 
     EXTRA_CONFIG_OPTS=
@@ -63,7 +63,7 @@ build () {
 	EXTRA_CONFIG_OPTS="$EXTRA_CONFIG_OPTS --with-sysroot=${DEST_ROOT}/sysroot"
     elif [[ $SDK2_PLATFORM_NAME = 'Linux' ]]; then
 	EXTRA_CONFIG_OPTS="$EXTRA_CONFIG_OPTS --enable-clocale=generic"
-    fi	
+    fi
 
     # Configure
 

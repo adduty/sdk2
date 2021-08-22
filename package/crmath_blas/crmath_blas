@@ -20,7 +20,7 @@ unpack () {
     mkdir $SD
 
     for src_file in $SF; do
-	
+
 	tar xf $src_file -C $SD --strip-components 1
 
 	if [ $? -ne 0 ]; then

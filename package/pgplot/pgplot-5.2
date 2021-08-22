@@ -55,7 +55,7 @@ unpack () {
 
     sed -e "s/^! PNDRIV/ PNDRIV/g" \
 	-e "s/^! PSDRIV/ PSDRIV/g" \
-	-e "s/^! XWDRIV/ XWDRIV/g" ${SD}/drivers.list > ${BD}/drivers.list    
+	-e "s/^! XWDRIV/ XWDRIV/g" ${SD}/drivers.list > ${BD}/drivers.list
 
 }
 
@@ -83,7 +83,7 @@ build () {
 
     # Remove libpng from the link list (should now be built into
     # libpgplot)
-    
+
     sed -i.bak -e 's|-lpng||g' ${BD}/makefile && rm -f ${BD}/makefile.bak
 
     # Build (doesn't play well with multi-core)
@@ -152,7 +152,7 @@ install () {
     fi
 
     # Copy docs
-    
+
     cd $SD
 
     mkdir -pv ${DEST_ROOT}/share/doc/pgplot
