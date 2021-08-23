@@ -35,7 +35,7 @@ fi
 
 FLAGS=$SDK2_GCC_FLAGS
 
-if [[ $COMPILING == "y" ]]; then
+if [[ $COMPILING = "y" ]]; then
 
     # Set up system paths
 

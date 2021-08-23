@@ -19,7 +19,7 @@ REAL_MD5SUM=
 
 for file in `which -a md5sum`; do
 
-    if [[ "$(stat -L -f '%d:%i' $file)" == "$(stat -L -f '%d:%i' $0)" ]]; then
+    if [[ "$(stat -L -f '%d:%i' $file)" = "$(stat -L -f '%d:%i' $0)" ]]; then
 	THIS_MD5SUM=$0
     elif [[ -n $THIS_MD5SUM ]]; then
 	REAL_MD5SUM=$file
