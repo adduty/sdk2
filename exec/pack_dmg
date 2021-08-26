@@ -45,7 +45,7 @@ fi
 
 # Create a temporary directory to work in
 
-WD=`mktemp -d ${DMG_FILE}.XXXXXX`
+WD=$(mktemp -d ${DMG_FILE}.XXXXXX)
 
 # Convert the template image to a working disk image
 
@@ -71,7 +71,7 @@ fi
 
 # Figure out the target directory
 
-TD=${MP}/`basename $DEST_ROOT`
+TD=${MP}/$(basename $DEST_ROOT)
 
 if [[ ! -d $TD ]]; then
     echo "Could not find target directory '$TD' in template image"

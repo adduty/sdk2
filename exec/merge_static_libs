@@ -31,7 +31,7 @@ fi
 
 # Create a temporary directory to work in
 
-WD=`mktemp -d ${OUTPUT_LIB}.XXXXXX`
+WD=$(mktemp -d ${OUTPUT_LIB}.XXXXXX)
 
 # Process each input library in turn
 
@@ -39,13 +39,13 @@ for input_lib in ${INPUT_LIBS[@]}; do
 
     # Copy the library into the work directory
 
-    LF=${WD}/`basename $input_lib`
+    LF=${WD}/$(basename $input_lib)
 
     cp $input_lib $LF
 
     # Get a list of object files within the library
 
-    obj_files=(`ar -t $LF | awk '!/^__\.SYMDEF/'`)
+    obj_files=($(ar -t $LF | awk '!/^__\.SYMDEF/'))
 
     # Add objects to the output library while removing them from the input library copy
 

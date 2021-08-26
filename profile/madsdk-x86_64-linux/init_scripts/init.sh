@@ -11,7 +11,7 @@ fi
 
 if [ ! -f "${MADSDK_ROOT}/etc/check_arch.done" ]; then
     echo "madsdk_init.sh: checking architecture"
-    if [ `${MADSDK_ROOT}/bin/madsdk_arch_check` != 'Y' ]; then
+    if [ $(${MADSDK_ROOT}/bin/madsdk_arch_check) != 'Y' ]; then
 	echo "madsdk_init.sh: unsupported architecture"
 	return 1
     fi
@@ -58,4 +58,4 @@ export VALGRIND_LIB="${MADSDK_ROOT}/lib/valgrind"
 # Set other environment variables
 
 export MESASDK_ROOT=$MADSDK_ROOT
-export MESASDK_VERSION=`${MADSDK_ROOT}/bin/madsdk_version`
+export MESASDK_VERSION=$(${MADSDK_ROOT}/bin/madsdk_version)

@@ -17,7 +17,7 @@ set -o nounset
 THIS_MD5SUM=
 REAL_MD5SUM=
 
-for file in `which -a md5sum`; do
+for file in $(which -a md5sum); do
 
     if [[ "$(stat -L -f '%d:%i' $file)" = "$(stat -L -f '%d:%i' $0)" ]]; then
 	THIS_MD5SUM=$0

@@ -11,7 +11,7 @@ fi
 
 if [ ! -f "${MESASDK_ROOT}/etc/check_arch.done" ]; then
     echo "mesasdk_init.sh: checking architecture"
-    if [ `${MESASDK_ROOT}/bin/mesasdk_arch_check` != 'Y' ]; then
+    if [ $(${MESASDK_ROOT}/bin/mesasdk_arch_check) != 'Y' ]; then
 	echo "mesasdk_init.sh: unsupported architecture"
 	return 1
     fi
@@ -57,4 +57,4 @@ export VALGRIND_LIB="${MESASDK_ROOT}/lib/valgrind"
 
 # Set other environment variables
 
-export MESASDK_VERSION=`${MESASDK_ROOT}/bin/mesasdk_version`
+export MESASDK_VERSION=$(${MESASDK_ROOT}/bin/mesasdk_version)

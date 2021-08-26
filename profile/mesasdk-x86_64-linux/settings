@@ -21,8 +21,8 @@ export DEST_ROOT=${SDK2_TMP}/${PROFILE_NAME}
 
 # Count the number of cores
 
-if `cat /proc/cpuinfo | grep -q "core\ id"`; then
-    export NCORES=`cat /proc/cpuinfo | grep "core\ id" | wc -l`
+if cat /proc/cpuinfo | grep -q "core\ id"; then
+    export NCORES=$(cat /proc/cpuinfo | grep "core\ id" | wc -l)
 else
     export NCORES=1
 fi

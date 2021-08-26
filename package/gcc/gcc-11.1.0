@@ -127,7 +127,7 @@ install () {
 
     case $SDK2_PLATFORM_NAME in
 	Linux)
-	    script_dir=${SDK2_PROFILE_ROOT}/common/gcc-`uname -m`-linux
+	    script_dir=${SDK2_PROFILE_ROOT}/common/gcc-$(uname -m)-linux
 	    ;;
 	Darwin)
 	    script_dir=${SDK2_PROFILE_ROOT}/common/gcc-osx
@@ -154,8 +154,8 @@ install () {
     if [[ $SDK2_PLATFORM_NAME = 'Darwin' ]]; then
 	for lib in ${DEST_ROOT}/lib/*.dylib; do
             if [ -f $lib ]; then
-		if `file $lib | grep -q 'Mach-O .* shared library stub'`; then
-                    full_lib_name=`otool -D $lib | awk 'NR == 2' | xargs basename`
+		if file $lib | grep -q 'Mach-O .* shared library stub'; then
+                    full_lib_name=$(otool -D $lib | awk 'NR == 2' | xargs basename)
                     rm $lib
                     ln -sfv $full_lib_name $lib
 		fi

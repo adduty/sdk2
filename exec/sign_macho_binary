@@ -23,11 +23,11 @@ if [ -f $FILE ]; then
 
     # Check if the file is Mach-O format
 
-    if `file $FILE | grep -q 'Mach-O'`; then
+    if file $FILE | grep -q 'Mach-O'; then
 
         # Check that the file is of the appropriate type
 
-        if `file $FILE | egrep -q 'executable|library|bundle'`; then
+        if file $FILE | egrep -q 'executable|library|bundle'; then
 
 	    # Go ahead and sign
 

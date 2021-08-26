@@ -27,7 +27,7 @@ if [[ ! -f $ICON ]]; then
     exit 1
 fi
 
-if `file $ICON | grep -q -v 'Mac OS X icon'`; then
+if file $ICON | grep -q -v 'Mac OS X icon'; then
     echo "File '$ICON' is not a Mac OS X icon file"
     exit 1
 fi
@@ -39,7 +39,7 @@ fi
 
 # Create a temporary resource file pointing to the icon
 
-RESDIR=`mktemp -d add_dir_icon.XXXXXX` || exit 1
+RESDIR=$(mktemp -d add_dir_icon.XXXXXX) || exit 1
 
 pushd $RESDIR > /dev/null
 

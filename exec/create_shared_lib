@@ -40,7 +40,7 @@ infile=${inpath##*/}
 
 # Platform-specific processing
 
-if `uname -a | grep -q Darwin`; then
+if uname -a | grep -q Darwin; then
     outpath=${inpath%.a}.dylib
     outfile=${infile%.a}.dylib
     compopts="${compopts} -dynamiclib -install_name ${outpath}"
@@ -52,7 +52,7 @@ fi
 
 # Unpack the archive
 
-tmpdir=`mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir'`
+tmpdir=$(mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir')
 
 cp $inpath $tmpdir/
 

@@ -2,5 +2,4 @@
 #
 # Link script for crmath
 
-echo -L@SDK_ROOT@/lib -lcrmath `crlibm_link`
-
+echo -L@SDK_ROOT@/lib -lcrmath $(crlibm_link)

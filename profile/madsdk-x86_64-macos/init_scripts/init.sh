@@ -16,4 +16,4 @@ export PGPLOT_DIR="${MADSDK_ROOT}/lib/pgplot"
 
 # Set other environment variables
 
-export MADSDK_VERSION=`${MADSDK_ROOT}/bin/madsdk_version`
+export MADSDK_VERSION=$(${MADSDK_ROOT}/bin/madsdk_version)

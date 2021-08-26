@@ -2,4 +2,4 @@
 #
 # Link script for crmath-slot lapack
 
-echo -L@SDK_ROOT@/math-slots/crmath/lib -llapack `blas_link`
+echo -L@SDK_ROOT@/math-slots/crmath/lib -llapack $(blas_link)

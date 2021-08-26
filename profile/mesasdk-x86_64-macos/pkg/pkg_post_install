@@ -55,7 +55,7 @@ EndOfScript
 fi
 
 if [[ -L $sysroot ]]; then
-    sysroot=`dirname $sysroot`/`readlink $sysroot`
+    sysroot=$(dirname $sysroot)/$(readlink $sysroot)
 fi
 
 rm -f ${MESASDK_ROOT}/sysroot

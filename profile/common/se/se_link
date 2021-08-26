@@ -2,4 +2,4 @@
 #
 # Link script for se
 
-echo -L@SDK_ROOT@/lib -lse `hdf5_link`
+echo -L@SDK_ROOT@/lib -lse $(hdf5_link)

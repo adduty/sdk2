@@ -21,11 +21,11 @@ export DEST_ROOT=${SDK2_TMP}/${PROFILE_NAME}
 
 # Count the number of cores
 
-export NCORES=`sysctl hw.ncpu | awk '{print $2}'`
+export NCORES=$(sysctl hw.ncpu | awk '{print $2}')
 
 # Set the build spec (for tools)
 
-export BUILD_SPEC="arm64-apple-darwin`uname -r`"
+export BUILD_SPEC="arm64-apple-darwin$(uname -r)"
 
 # Set the extension for library files
 

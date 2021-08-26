@@ -30,18 +30,18 @@ if [ -f $FILE ]; then
 
     # Check if the file is ELF format
 
-    if `file $FILE | grep -q 'ELF'`; then
+    if file $FILE | grep -q 'ELF'; then
 
 	# Check that the file has a dynamic section
 
-	if `readelf -d $FILE | grep -q 'Dynamic'`; then
+	if readelf -d $FILE | grep -q 'Dynamic'; then
 
-	    FD=`dirname $FILE`
+	    FD=$(dirname $FILE)
 
 	    # Fix the rpath
 
-	    rpath_old=`patchelf --print-rpath $FILE | sed -e "s|\\$ORIGIN|$FD|g"`
-            rpath_new=`relpath $rpath_old $FD | sed -e "s|^|\\$ORIGIN/|" -e "s|:|:\\$ORIGIN/|g"`
+	    rpath_old=$(patchelf --print-rpath $FILE | sed -e "s|\\$ORIGIN|$FD|g")
+            rpath_new=$(relpath $rpath_old $FD | sed -e "s|^|\\$ORIGIN/|" -e "s|:|:\\$ORIGIN/|g")
 
             patchelf --set-rpath $rpath_new $FILE --shrink-rpath
 

@@ -145,8 +145,8 @@ install () {
     if [[ $SDK2_PLATFORM_NAME = 'Darwin' ]]; then
 	for lib in ${DEST_ROOT}/lib/*.dylib; do
             if [ -f $lib ]; then
-		if `file $lib | grep -q 'Mach-O .* shared library stub'`; then
-                    full_lib_name=`otool -D $lib | awk 'NR == 2' | xargs basename`
+		if file $lib | grep -q 'Mach-O .* shared library stub'; then
+                    full_lib_name=$(otool -D $lib | awk 'NR == 2' | xargs basename)
                     mkdir -pv ${DEST_ROOT}/lib/stubs
                     mv -v $lib ${DEST_ROOT}/lib/stubs/
                     ln -sfv $full_lib_name $lib
